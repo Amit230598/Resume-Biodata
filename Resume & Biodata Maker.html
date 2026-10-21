@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Resume &amp; Biodata Maker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Merriweather:wght@400;700&family=Poppins:wght@300;400;500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eceef5;--sf:#fff;--ink:#1b1f33;--mut:#646b85;--ln:#d9dcea;--ac:#3b4cca;--acs:#e3e6fa;--st:#c9cde0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161f;--sf:#1d202c;--ink:#e8eaf5;--mut:#9aa1bd;--ln:#2f3446;--ac:#8d9bff;--acs:#2a2f52;--st:#0d0e14;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14161f;--sf:#1d202c;--ink:#e8eaf5;--mut:#9aa1bd;--ln:#2f3446;--ac:#8d9bff;--acs:#2a2f52;--st:#0d0e14;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 'Source Sans 3',system-ui,sans-serif}
+header.top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 18px;background:var(--sf);border-bottom:1px solid var(--ln)}
+header.top h1{font-size:18px;margin:0 8px 0 0;font-weight:700}.sp{flex:1}
+.seg{display:inline-flex;border:1px solid var(--ln);border-radius:8px;overflow:hidden}.seg button{border:0;background:none;color:var(--mut);padding:7px 14px;font:inherit;cursor:pointer}.seg button.on{background:var(--ac);color:var(--sf);font-weight:600}
+button.b{background:var(--ac);color:var(--sf);border:0;padding:8px 14px;border-radius:8px;font:inherit;font-weight:600;cursor:pointer}button.g{background:none;color:var(--ink);border:1px solid var(--ln);font-weight:400}button.s{padding:4px 9px;font-size:13px}
+.app{display:grid;grid-template-columns:390px 1fr;height:calc(100vh - 58px)}
+.ed{background:var(--sf);border-right:1px solid var(--ln);overflow:auto;padding:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.tabs button{border:1px solid var(--ln);background:none;color:var(--ink);border-radius:16px;padding:5px 12px;font:inherit;cursor:pointer}.tabs button.on{background:var(--acs);border-color:var(--ac);color:var(--ac);font-weight:600}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px}label{font-size:13px;color:var(--mut);display:block}label.w{grid-column:1/-1}
+input,select,textarea{width:100%;margin-top:3px;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--ln);border-radius:6px;padding:7px 9px}textarea{min-height:84px;resize:vertical}
+input[type=color]{padding:2px;height:36px}input[type=range]{padding:0}
+:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+.it{border:1px solid var(--ln);border-radius:8px;padding:10px;margin-bottom:10px}.ih{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.sw{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}.sw i{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid var(--sf);box-shadow:0 0 0 1px var(--ln)}
+.stage{background:var(--st);overflow:auto;padding:18px;display:flex;justify-content:center;align-items:flex-start}
+#wrap{flex-shrink:0}
+#paper{width:794px;min-height:1123px;background:#fff;color:#262a36;font-family:var(--pf);font-size:var(--ps);line-height:1.5;position:relative;transform-origin:top left;box-shadow:0 6px 30px rgba(0,0,0,.25)}
+#paper h1{margin:0;line-height:1.15}#paper ul{margin:4px 0 0;padding-left:18px}#paper p{margin:0}
+#paper h3{font-size:1.1em;margin:18px 0 8px;color:var(--c)}
+.h-line h3{border-bottom:2px solid var(--c);padding-bottom:3px}.h-fill h3{background:var(--c);color:#fff;padding:3px 10px}
+.frame{position:absolute;inset:16px;border:0 solid var(--c);pointer-events:none}
+.bd-solid .frame{border-width:2px}.bd-double .frame{border-width:6px;border-style:double}.bd-ornate .frame{border-width:3px;outline:1px solid var(--c);outline-offset:5px;inset:22px}
+.row{display:flex;justify-content:space-between;gap:10px}.mu{color:#6b7184}.item{margin-bottom:10px}
+.chips span{display:inline-block;border:1px solid var(--c);color:var(--c);border-radius:12px;padding:1px 10px;margin:0 6px 6px 0;font-size:.92em}
+.ph{width:110px;height:110px;object-fit:cover;display:block}.sh-circle{border-radius:50%}.sh-round{border-radius:14px}
+.cl{padding:56px 60px;text-align:left}.cl .hd{text-align:center}.cl .hd .ph{margin:0 auto 10px}.cl h1{font-size:2.3em;color:var(--c)}
+.mi{padding:60px}.mi .hd{display:flex;justify-content:space-between;align-items:center;gap:20px}.mi h1{font-size:2.8em;font-weight:300}
+.mod{display:grid;grid-template-columns:250px 1fr;min-height:1123px}.mod aside{background:var(--c);color:#fff;padding:40px 24px}.mod aside h1{font-size:1.9em;margin:14px 0 4px}.mod aside h3{color:#fff;border-bottom:1px solid rgba(255,255,255,.5);background:none;padding:0 0 3px}.mod aside .chips span{border-color:#fff;color:#fff}.mod .mn{padding:44px 40px}.mod .ct div{margin-bottom:5px;word-break:break-word;font-size:.92em}
+.tr{padding:60px;text-align:left}.tr .inv{text-align:center;color:var(--c);font-weight:600}.tr .bt{text-align:center;font-size:2em;margin:6px 0 14px;color:var(--c)}.tr .trh{text-align:center;margin-bottom:6px}.tr .trh .ph{margin:0 auto 8px;width:130px;height:150px}.tr h1{font-size:1.6em}
+.bn .ban{background:var(--c);color:#fff;padding:40px 56px;display:flex;align-items:center;gap:26px}.bn h1{font-size:2.3em}.bn .bp{padding:20px 56px 50px}.bn .ph{width:130px;height:150px}
+#paper table{width:100%;border-collapse:collapse}#paper th{text-align:left;width:38%;font-weight:600;padding:5px 8px 5px 0;vertical-align:top}#paper td{padding:5px 0;border-bottom:1px dotted #c3c7d4}#paper th{border-bottom:1px dotted #c3c7d4}
+dialog{border:1px solid var(--ln);border-radius:10px;background:var(--sf);color:var(--ink);padding:20px;width:min(560px,94vw)}dialog::backdrop{background:rgba(0,0,0,.5)}
+.note{color:var(--mut);font-size:13px;margin:10px 0 0}
+@media(max-width:860px){.app{display:block;height:auto}.ed{border-right:0;max-height:none}.stage{padding:10px}}
+@page{size:A4;margin:0}
+@media print{header.top,.ed{display:none!important}body,.stage{background:#fff;padding:0;display:block;overflow:visible}.app{display:block;height:auto}#wrap{width:auto!important;height:auto!important}#paper{transform:none!important;box-shadow:none}}
+</style></head><body>
+<header class="top"><h1>Resume &amp; Biodata Maker</h1>
+<div class="seg"><button id="m-resume" onclick="setMode('resume')">Resume</button><button id="m-bio" onclick="setMode('bio')">Biodata</button></div><span class="sp"></span>
+<button class="b g s" onclick="backup()">Backup / restore</button><button class="b g s" onclick="resetAll()">Reset</button><button class="b" onclick="print()">Print / Save PDF</button></header>
+<div class="app"><div class="ed" id="ed"></div><div class="stage" id="stage"><div id="wrap"><div id="paper"></div></div></div></div>
+<dialog id="dlg"></dialog>
+<script>
+const $=s=>document.querySelector(s),KEY='resume_v1';
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const FONTS={lora:["Lora","'Lora',Georgia,serif"],sans:["Source Sans","'Source Sans 3',Arial,sans-serif"],pop:["Poppins","'Poppins',Arial,sans-serif"],mer:["Merriweather","'Merriweather',Georgia,serif"]};
+const COLORS=['#3b4cca','#0e6b50','#b3261e','#7a3e9d','#1f2937','#c2570c','#0f766e','#9d174d'];
+const def=()=>({mode:'resume',tab:'p',
+ p:{name:'Riya Sharma',title:'Frontend Developer',email:'riya.sharma@example.com',phone:'+91 98765 43210',addr:'Ahmedabad, Gujarat',link:'linkedin.com/in/riya',photo:''},
+ summary:'Developer with 4 years of experience building fast, accessible web apps. Comfortable owning features from design handoff to release.',
+ exp:[{role:'Frontend Developer',org:'Brightline Tech',from:'2022',to:'Present',desc:'Built a reporting dashboard used by 2,000 customers\nCut page load time by 40% with code splitting\nMentored two junior developers'},{role:'Web Intern',org:'Nova Studio',from:'2021',to:'2022',desc:'Developed marketing pages in React\nFixed 60+ UI bugs'}],
+ edu:[{deg:'B.E. Computer Engineering',inst:'Gujarat Technological University',year:'2021',score:'8.4 CGPA'}],
+ skills:'JavaScript, React, HTML, CSS, Node.js, Git',lang:'English, Hindi, Gujarati',
+ proj:[{name:'Expense Tracker',desc:'Personal finance app with charts and CSV import'}],
+ bio:{dob:'12 March 1998',tob:'09:15 AM',pob:'Ahmedabad',height:'5 ft 4 in',complexion:'Fair',edu:'B.E. Computer Engineering',occ:'Software Developer',income:'₹9 Lakh',religion:'Hindu',caste:'',gotra:'',manglik:'No',diet:'Vegetarian',about:'Cheerful and family-oriented, with interests in travel, music and cooking.',father:'Mr. Rajesh Sharma',fatherocc:'Businessman',mother:'Mrs. Sunita Sharma',motherocc:'Homemaker',siblings:'1 elder brother'},
+ d:{tpl:'classic',btpl:'trad',color:'#3b4cca',font:'lora',size:13,head:'line',shape:'circle',border:'none',inv:'॥ Shree Ganeshaya Namah ॥'}});
+let D;try{D=JSON.parse(localStorage.getItem(KEY))}catch(e){}D=Object.assign(def(),D||{});
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){}};
+const get=k=>k.split('.').reduce((o,x)=>o&&o[x],D),set=(k,v)=>{const a=k.split('.'),l=a.pop();a.reduce((o,x)=>o[x],D)[l]=v};
+// editor
+const F=(k,l,t)=>t=='area'?`<label class="w">${l}<textarea data-k="${k}">${esc(get(k))}</textarea></label>`:`<label>${l}<input data-k="${k}" value="${esc(get(k))}"></label>`;
+const list=(n,fs,add)=>D[n].map((x,i)=>`<div class="it"><div class="ih"><b>${n=='exp'?'Job':n=='edu'?'Education':'Project'} ${i+1}</b><button class="b g s" onclick="del('${n}',${i})">Remove</button></div><div class="fg">${fs.map(f=>F(n+'.'+i+'.'+f[0],f[1],f[2])).join('')}</div></div>`).join('')+`<button class="b g" onclick="addI('${n}')">${add}</button>`;
+const photoF=()=>`<div class="w" style="grid-column:1/-1"><label>Photo<input type="file" accept="image/*" onchange="photo(this)"></label>${D.p.photo?'<button class="b g s" style="margin-top:6px" onclick="D.p.photo=\'\';save();ed();pv()">Remove photo</button>':''}</div>`;
+const sel=(k,l,o)=>`<label>${l}<select data-k="${k}">${o.map(x=>`<option value="${x[0]}" ${get(k)==x[0]?'selected':''}>${x[1]}</option>`).join('')}</select></label>`;
+const E={
+ p:()=>photoF()+F('p.name','Full name')+F('p.title','Job title')+F('p.email','Email')+F('p.phone','Phone')+F('p.addr','Address')+F('p.link','Website or LinkedIn')+F('lang','Languages (comma separated)'),
+ s:()=>F('summary','Professional summary','area'),
+ x:()=>list('exp',[['role','Job title'],['org','Company'],['from','From'],['to','To'],['desc','What you did (one point per line)','area']],'Add job'),
+ e:()=>list('edu',[['deg','Degree'],['inst','Institute'],['year','Year'],['score','Score']],'Add education'),
+ k:()=>F('skills','Skills (comma separated)','area'),
+ j:()=>list('proj',[['name','Project name'],['desc','Description','area']],'Add project'),
+ b:()=>photoF()+F('p.name','Full name')+[['dob','Date of birth'],['tob','Time of birth'],['pob','Place of birth'],['height','Height'],['complexion','Complexion'],['edu','Education'],['occ','Occupation'],['income','Annual income'],['religion','Religion'],['caste','Caste'],['gotra','Gotra'],['manglik','Manglik'],['diet','Diet']].map(x=>F('bio.'+x[0],x[1])).join('')+F('bio.about','About me','area'),
+ f:()=>[['father','Father name'],['fatherocc','Father occupation'],['mother','Mother name'],['motherocc','Mother occupation'],['siblings','Siblings']].map(x=>F('bio.'+x[0],x[1])).join(''),
+ c:()=>F('p.phone','Phone')+F('p.email','Email')+F('p.addr','Address','area'),
+ d:()=>{const r=D.mode=='resume';return `${r?sel('d.tpl','Template',[['classic','Classic'],['modern','Modern sidebar'],['minimal','Minimal']]):sel('d.btpl','Template',[['trad','Traditional'],['banner','Color banner']])}
+ ${sel('d.font','Font',Object.entries(FONTS).map(([k,v])=>[k,v[0]]))}
+ <label class="w">Accent color<input type="color" data-k="d.color" value="${D.d.color}"><div class="sw">${COLORS.map(c=>`<i style="background:${c}" onclick="setD('color','${c}')"></i>`).join('')}</div></label>
+ <label class="w">Text size (${D.d.size}px)<input type="range" min="11" max="16" step="0.5" data-k="d.size" data-r="1" value="${D.d.size}"></label>
+ ${sel('d.head','Heading style',[['line','Underline'],['fill','Filled bar'],['plain','Plain']])}${sel('d.shape','Photo shape',[['circle','Circle'],['round','Rounded'],['square','Square'],['none','Hide photo']])}
+ ${sel('d.border','Page border',[['none','None'],['solid','Solid'],['double','Double'],['ornate','Ornate']])}${r?'':F('d.inv','Top invocation text')}`}
+};
+function ed(){const T=D.mode=='resume'?[['p','Personal'],['s','Summary'],['x','Experience'],['e','Education'],['k','Skills'],['j','Projects'],['d','Design']]:[['b','Personal'],['f','Family'],['c','Contact'],['d','Design']];
+ if(!T.some(t=>t[0]==D.tab))D.tab=T[0][0];
+ $('#ed').innerHTML=`<div class="tabs">${T.map(t=>`<button class="${t[0]==D.tab?'on':''}" onclick="D.tab='${t[0]}';ed()">${t[1]}</button>`).join('')}</div><div class="fg">${E[D.tab]()}</div>${D.tab=='d'?'<p class="note">Tip: for a multi-page resume, use Print and choose Save as PDF. Margins: None.</p>':''}`;
+ $('#m-resume').className=D.mode=='resume'?'on':'';$('#m-bio').className=D.mode=='bio'?'on':''}
+const setMode=m=>{D.mode=m;save();ed();pv()};
+const setD=(k,v)=>{D.d[k]=v;save();ed();pv()};
+const addI=n=>{D[n].push(n=='exp'?{role:'',org:'',from:'',to:'',desc:''}:n=='edu'?{deg:'',inst:'',year:'',score:''}:{name:'',desc:''});save();ed();pv()};
+const del=(n,i)=>{D[n].splice(i,1);save();ed();pv()};
+document.addEventListener('input',e=>{const k=e.target.dataset&&e.target.dataset.k;if(!k)return;set(k,k=='d.size'?+e.target.value:e.target.value);save();pv();if(e.target.dataset.r)ed()});
+function photo(inp){const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),s=Math.min(1,400/Math.max(im.width,im.height));c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);D.p.photo=c.toDataURL('image/jpeg',.85);save();ed();pv()};im.src=r.result};r.readAsDataURL(f)}
+// preview
+const ul=t=>{const l=(t||'').split('\n').filter(x=>x.trim());return l.length?`<ul>${l.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''};
+const S=(t,h)=>h?`<section><h3>${t}</h3>${h}</section>`:'';
+const sp=t=>(t||'').split(',').map(s=>s.trim()).filter(Boolean);
+const chips=a=>a.length?`<div class="chips">${a.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:'';
+const ph=()=>D.p.photo&&D.d.shape!='none'?`<img class="ph sh-${D.d.shape}" src="${D.p.photo}" alt="">`:'';
+function resume(){const p=D.p,d=D.d,sk=sp(D.skills),lg=sp(D.lang),ct=[p.email,p.phone,p.addr,p.link].filter(Boolean);
+ const ex=D.exp.map(x=>`<div class="item"><div class="row"><b>${esc(x.role)}</b><span>${esc(x.from)}${x.to?' – '+esc(x.to):''}</span></div><div class="mu">${esc(x.org)}</div>${ul(x.desc)}</div>`).join('');
+ const ed=D.edu.map(x=>`<div class="item"><div class="row"><b>${esc(x.deg)}</b><span>${esc(x.year)}</span></div><div class="mu">${esc(x.inst)}${x.score?' · '+esc(x.score):''}</div></div>`).join('');
+ const pj=D.proj.map(x=>`<div class="item"><b>${esc(x.name)}</b>${ul(x.desc)}</div>`).join('');
+ const sum=D.summary?`<p>${esc(D.summary)}</p>`:'';
+ if(d.tpl=='modern')return `<div class="mod"><aside>${ph()}<h1>${esc(p.name)}</h1><div>${esc(p.title)}</div>${S('Contact',`<div class="ct">${ct.map(c=>`<div>${esc(c)}</div>`).join('')}</div>`)}${S('Skills',chips(sk))}${S('Languages',chips(lg))}</aside><div class="mn">${S('Profile',sum)}${S('Experience',ex)}${S('Education',ed)}${S('Projects',pj)}</div></div>`;
+ const hd=d.tpl=='minimal'?`<div class="hd"><div><h1>${esc(p.name)}</h1><div style="font-size:1.2em;color:var(--c)">${esc(p.title)}</div><div class="mu" style="margin-top:6px">${ct.map(esc).join(' &nbsp;|&nbsp; ')}</div></div>${ph()}</div>`:`<div class="hd">${ph()}<h1>${esc(p.name)}</h1><div style="font-size:1.2em">${esc(p.title)}</div><div class="mu" style="margin-top:4px">${ct.map(esc).join(' &nbsp;|&nbsp; ')}</div></div>`;
+ return `<div class="${d.tpl=='minimal'?'mi':'cl'}">${hd}${S('Summary',sum)}${S('Experience',ex)}${S('Education',ed)}${S('Skills',chips(sk))}${S('Projects',pj)}${S('Languages',chips(lg))}</div>`}
+function bio(){const p=D.p,b=D.bio,d=D.d;
+ const T=(t,a)=>{const r=a.filter(x=>x[1]).map(x=>`<tr><th>${x[0]}</th><td>${esc(x[1])}</td></tr>`).join('');return r?`<section><h3>${t}</h3><table>${r}</table></section>`:''};
+ const body=S('About me',b.about?`<p>${esc(b.about)}</p>`:'')+T('Personal details',[['Date of birth',b.dob],['Time of birth',b.tob],['Place of birth',b.pob],['Height',b.height],['Complexion',b.complexion],['Education',b.edu],['Occupation',b.occ],['Annual income',b.income],['Religion',b.religion],['Caste',b.caste],['Gotra',b.gotra],['Manglik',b.manglik],['Diet',b.diet]])+T('Family details',[['Father',b.father],['Father occupation',b.fatherocc],['Mother',b.mother],['Mother occupation',b.motherocc],['Siblings',b.siblings]])+T('Contact details',[['Phone',p.phone],['Email',p.email],['Address',p.addr]]);
+ if(d.btpl=='banner')return `<div class="bn"><div class="ban">${ph()}<div><h1>${esc(p.name)}</h1><div>Biodata</div></div></div><div class="bp">${body}</div></div>`;
+ return `<div class="tr"><div class="inv">${esc(d.inv)}</div><h2 class="bt">Biodata</h2><div class="trh">${ph()}<h1>${esc(p.name)}</h1></div>${body}</div>`}
+function pv(){const d=D.d,P=$('#paper');P.className='h-'+d.head+' bd-'+d.border;P.style.cssText=`--c:${d.color};--pf:${FONTS[d.font][1]};--ps:${d.size}px`;
+ P.innerHTML=(d.border!='none'?'<div class="frame"></div>':'')+(D.mode=='resume'?resume():bio());fit()}
+function fit(){const w=$('#stage').clientWidth-36,s=Math.min(1,w/794),P=$('#paper');P.style.transform=`scale(${s})`;$('#wrap').style.width=794*s+'px';$('#wrap').style.height=P.offsetHeight*s+'px'}
+addEventListener('resize',fit);
+function backup(){$('#dlg').innerHTML=`<h3 style="margin-top:0">Backup and restore</h3><p class="note" style="margin-top:0">Copy this text to keep your data safe. To restore, paste a saved backup and choose Load.</p><textarea id="bk" style="min-height:200px;font-size:12px">${esc(JSON.stringify(D))}</textarea><div style="display:flex;gap:10px;margin-top:12px"><button class="b" onclick="loadBk()">Load backup</button><button class="b g" onclick="dlg.close()">Close</button></div>`;dlg.showModal()}
+function loadBk(){try{D=Object.assign(def(),JSON.parse($('#bk').value));save();dlg.close();ed();pv()}catch(e){alert('That backup text is not valid. Paste the full text you copied earlier.')}}
+function resetAll(){if(confirm('Erase your data and restore the sample?')){D=def();save();ed();pv()}}
+ed();pv();
+</script></body></html>
